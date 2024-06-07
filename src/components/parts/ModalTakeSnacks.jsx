@@ -28,7 +28,7 @@ function ModalTakeSnacks({ purchasedSnacks, setPurchasedSnacks }) {
     <Dialog>
       <DialogTrigger asChild className="p-2">
         <div className="flex justify-center items-center w-full h-full">
-          <Button variant="outline" className="w-4/6">
+          <Button variant="outline" className="w-4/6  bg-blue-800 text-lightBg hover:bg-blue-900 hover:text-lightBg">
             Take Snacks
           </Button>
         </div>

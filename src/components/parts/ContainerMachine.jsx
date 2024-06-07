@@ -12,6 +12,7 @@ import { getAllSnacks, resetData, updateSnack } from '@/fetching/snack';
 import { getAllMoney } from '@/fetching/money';
 import formatRupiah from '@/lib/formatRupiah';
 import TopMachine from './TopMachine';
+import Marquee from 'react-fast-marquee';
 
 function ContainerMachine() {
   const [snacks, setSnacks] = useState([]);
@@ -73,7 +74,7 @@ function ContainerMachine() {
   }
   return (
     <div className="container-vending-machine shadow-2xl  h-[95svh] w-full px-2 md:px-0 md:w-[550px]">
-     <TopMachine/>
+      <TopMachine />
       <div className="main-machine shadow-inner rounded-b-md bg-primaryVm dark:bg-primaryVmDark h-5/6 w-full p-2 flex ">
         <div className="snacks-machine shadow-inner  bg-primaryVm dark:bg-primaryVmDark h-full w-3/5 ">
           <ContainerSnacks snacks={snacks} />
@@ -87,17 +88,23 @@ function ContainerMachine() {
         <div className="control-machine w-2/5 bg-primaryVm dark:bg-primaryVmDark relative">
           <ModalInsertMoney money={money} onInsertMoney={handleInsertMoney} />
           <div className="lcd-container p-2 text-white">
-            <div className="lcd-machine bg-blue-800 h-10 w-full mb-2 flex justify-center items-center">
+            <div className="lcd-machine bg-lightBg dark:bg-darkBg dark:text-lightBg text-darkBg h-10 w-full mb-2 flex justify-center items-center">
               <p>Saldo: {formatRupiah(balance)}</p>
             </div>
-            <div className="lcd-machine dark:bg-neutral-800 bg-blue-800 h-10 w-full flex justify-center items-center">
-              <p>Thankyou</p>
+            <div className="lcd-machine bg-lightBg dark:bg-darkBg dark:text-lightBg text-darkBg h-10 w-full flex justify-center items-center">
+              <Marquee>
+                <p className='mr-5'>Vending Machine App by Ghozi Izzulhaq</p>
+              </Marquee>
             </div>
           </div>
           <ContainerActionBuy snacks={snacks} handlePurchase={handlePurchase} />
           <ModalCollectMoney setBalance={setBalance} />
-          <div className="btn-reset p-2 absolute w-full bottom-2">
-            <Button type="button" onClick={() => handleReset()} className="w-full">
+          <div className="btn-reset p-2 absolute w-full bottom-5">
+            <Button
+              type="button"
+              onClick={() => handleReset()}
+              className="w-full  bg-red-800 text-lightBg hover:bg-red-900 hover:text-lightBg"
+            >
               Reset
             </Button>
           </div>

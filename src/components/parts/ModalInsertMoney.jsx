@@ -36,7 +36,7 @@ function ModalInsertMoney({ money, onInsertMoney }) {
     <Dialog>
       <DialogTrigger asChild className="p-2">
         <div>
-          <Button variant="outline" className="w-full">
+          <Button variant="outline" className="w-full bg-blue-800 text-lightBg hover:bg-blue-900 hover:text-lightBg rounded-md">
             Insert Money
           </Button>
         </div>
