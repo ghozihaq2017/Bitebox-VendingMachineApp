@@ -1,0 +1,106 @@
+{
+  "snacks": [
+    {
+      "id": "1",
+      "snackCode": "A1",
+      "name": "Biskuit",
+      "price": 6000,
+      "stock": 20,
+      "imgUrl": "https://res.cloudinary.com/dshibiync/image/upload/v1717683344/biskuit-removebg-preview_uu6jcl.png",
+      "createdAt": "2024-06-06T00:00:00Z",
+      "updatedAt": "2024-06-06T00:00:00Z"
+    },
+    {
+      "id": "2",
+      "snackCode": "A2",
+      "name": "Chips",
+      "price": 8000,
+      "stock": 15,
+      "imgUrl": "https://res.cloudinary.com/dshibiync/image/upload/v1717683344/chips-removebg-preview_bpe5im.png",
+      "createdAt": "2024-06-06T00:00:00Z",
+      "updatedAt": "2024-06-06T00:00:00Z"
+    },
+    {
+      "id": "3",
+      "snackCode": "B1",
+      "name": "Oreo",
+      "price": 10000,
+      "stock": 15,
+      "imgUrl": "https://res.cloudinary.com/dshibiync/image/upload/v1717683344/oreo-removebg-preview_lpwhb6.png",
+      "createdAt": "2024-06-06T00:00:00Z",
+      "updatedAt": "2024-06-06T00:00:00Z"
+    },
+    {
+      "id": "4",
+      "snackCode": "B2",
+      "name": "Tango",
+      "price": 12000,
+      "stock": 20,
+      "imgUrl": "https://res.cloudinary.com/dshibiync/image/upload/v1717683345/tango-removebg-preview_qjqrw5.png",
+      "createdAt": "2024-06-06T00:00:00Z",
+      "updatedAt": "2024-06-06T00:00:00Z"
+    },
+    {
+      "id": "5",
+      "snackCode": "C1",
+      "name": "Cokelat",
+      "price": 15000,
+      "stock": 15,
+      "imgUrl": "https://res.cloudinary.com/dshibiync/image/upload/v1717683345/coklat-removebg-preview_juiket.png",
+      "createdAt": "2024-06-06T00:00:00Z",
+      "updatedAt": "2024-06-06T00:00:00Z"
+    },
+    {
+      "id": "6",
+      "snackCode": "C2",
+      "name": "Better",
+      "price": 7000,
+      "stock": 0,
+      "imgUrl": "https://res.cloudinary.com/dshibiync/image/upload/v1717683345/better-removebg-preview_ctk839.png",
+      "createdAt": "2024-06-06T00:00:00Z",
+      "updatedAt": "2024-06-06T00:00:00Z"
+    }
+  ],
+  "money": [
+    {
+      "id": "1",
+      "name": "Dua Ribu Rupiah",
+      "value": 2000,
+      "imgUrl": "https://res.cloudinary.com/dshibiync/image/upload/v1717683314/2000_glnzzg.jpg",
+      "createdAt": "2024-06-06T00:00:00Z",
+      "updatedAt": "2024-06-06T00:00:00Z"
+    },
+    {
+      "id": "2",
+      "name": "Lima Ribu Rupiah",
+      "value": 5000,
+      "imgUrl": "https://res.cloudinary.com/dshibiync/image/upload/v1717683316/5000_xcicqa.jpg",
+      "createdAt": "2024-06-06T00:00:00Z",
+      "updatedAt": "2024-06-06T00:00:00Z"
+    },
+    {
+      "id": "3",
+      "name": "Sepuluh Ribu Rupiah",
+      "value": 10000,
+      "imgUrl": "https://res.cloudinary.com/dshibiync/image/upload/v1717683313/10000_sahm5g.jpg",
+      "createdAt": "2024-06-06T00:00:00Z",
+      "updatedAt": "2024-06-06T00:00:00Z"
+    },
+    {
+      "id": "4",
+      "name": "Dua Puluh Ribu Rupiah",
+      "value": 20000,
+      "imgUrl": "https://res.cloudinary.com/dshibiync/image/upload/v1717683313/20000r_g7rg4z.jpg",
+      "createdAt": "2024-06-06T00:00:00Z",
+      "updatedAt": "2024-06-06T00:00:00Z"
+    },
+    {
+      "id": "5",
+      "name": "Lima Puluh Ribu Rupiah",
+      "value": 50000,
+      "imgUrl": "https://res.cloudinary.com/dshibiync/image/upload/v1717683313/50000_jnwakv.jpg",
+      "createdAt": "2024-06-06T00:00:00Z",
+      "updatedAt": "2024-06-06T00:00:00Z"
+    }
+  ]
+}
