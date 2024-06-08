@@ -6,16 +6,11 @@ import {
   Dialog,
   DialogClose,
   DialogContent,
-  DialogDescription,
   DialogFooter,
-  DialogHeader,
-  DialogTitle,
   DialogTrigger
 } from '@/components/ui/dialog';
 
-import { Input } from '@/components/ui/input';
-import { Label } from '@/components/ui/label';
-import CardMoney from './CardMoney';
+
 
 function ModalConfirmation({ message, action, buttonName }) {
   console.log(buttonName);
@@ -25,16 +20,17 @@ function ModalConfirmation({ message, action, buttonName }) {
         <div>
           <Button
             variant="outline"
-            className={`w-full  ${buttonName === 'Reset Machine' ? ' bg-red-800 text-lightBg hover:bg-red-900 hover:text-lightBg' : ' bg-blue-800 text-lightBg hover:bg-blue-900 hover:text-lightBg'}`}
+            className={`w-full  ${
+              buttonName === 'Reset Machine'
+                ? ' bg-red-800 text-lightBg hover:bg-red-900 hover:text-lightBg'
+                : ' bg-blue-800 text-lightBg hover:bg-blue-900 hover:text-lightBg'
+            }`}
           >
             {buttonName}
           </Button>
         </div>
       </DialogTrigger>
       <DialogContent className="bg-primaryVm dark:bg-primaryVmDark  w-11/12 md:w-full">
-        {/* <DialogHeader className="min-h-40">
-          <DialogDescription>{message}</DialogDescription>
-        </DialogHeader> */}
         <div className="message-modal w-full min-h-40  flex justify-center items-center">
           <h3 className="text-xl">{message}</h3>
         </div>
