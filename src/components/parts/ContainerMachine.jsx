@@ -5,7 +5,6 @@ import React, { useEffect, useState } from 'react';
 import ContainerSnacks from '@/components/parts/ContainerSnacks';
 import ModalTakeSnacks from './ModalTakeSnacks';
 import ModalInsertMoney from './ModalInsertMoney';
-import ModalCollectMoney from './ModalCollectMoney';
 import { Button } from '@/components/ui/button';
 import ContainerActionBuy from './ContainerActionBuy';
 import { getAllSnacks, resetData, updateSnack } from '@/fetching/snack';
@@ -13,12 +12,16 @@ import { getAllMoney } from '@/fetching/money';
 import formatRupiah from '@/lib/formatRupiah';
 import TopMachine from './TopMachine';
 import Marquee from 'react-fast-marquee';
+import toast from 'react-hot-toast';
+import ModalConfirmation from './ModalConfirmation';
 
 function ContainerMachine() {
   const [snacks, setSnacks] = useState([]);
   const [money, setMoney] = useState([]);
   const [balance, setBalance] = useState(0);
   const [purchasedSnacks, setPurchasedSnacks] = useState([]);
+
+  const isDisabled = purchasedSnacks.length === 0;
 
   useEffect(() => {
     const getSnacksAndMoney = async () => {
@@ -32,7 +35,12 @@ function ContainerMachine() {
   }, []);
 
   const handleInsertMoney = (amount) => {
-    setBalance(balance + amount);
+    try {
+      setBalance(balance + amount);
+      toast.success(`Successfully inserted ${formatRupiah(amount)}`);
+    } catch (err) {
+      toast.error('Failed insert money');
+    }
   };
 
   const handlePurchase = async (snack) => {
@@ -51,11 +59,14 @@ function ContainerMachine() {
           return [...prev, { ...snack, total: 1 }];
         }
       });
+
+      toast.success('Successfully purchased snack');
     } else {
-      alert('Insufficient balance or out of stock!');
+      // alert('Insufficient balance or out of stock!');
+      toast.error('Insufficient balance or out of stock!');
     }
   };
-  console.log(snacks);
+  // console.log(snacks);
 
   const handleReset = async () => {
     try {
@@ -64,8 +75,19 @@ function ContainerMachine() {
       setSnacks(resultSnack);
       setBalance(0);
       setPurchasedSnacks([]);
+      toast.success('Successfully reset vending machine to default');
     } catch (error) {
       console.error('Error resetting data:', error);
+      toast.success('Failed reset vending machine to default');
+    }
+  };
+
+  const handleCollectMoney = () => {
+    if (balance > 0) {
+      setBalance(0);
+      toast.success('Successfully collected the money');
+    } else {
+      toast.error("You don't have any money");
     }
   };
 
@@ -79,10 +101,21 @@ function ContainerMachine() {
         <div className="snacks-machine shadow-inner  bg-primaryVm dark:bg-primaryVmDark h-full w-3/5 ">
           <ContainerSnacks snacks={snacks} />
           <div className="box-boughtSnack  w-full h-1/6 bg-primaryVm dark:bg-primaryVmDark">
-            <ModalTakeSnacks
-              purchasedSnacks={purchasedSnacks}
-              setPurchasedSnacks={setPurchasedSnacks}
-            />
+            {!isDisabled ? (
+              <ModalTakeSnacks
+                purchasedSnacks={purchasedSnacks}
+                setPurchasedSnacks={setPurchasedSnacks}
+              />
+            ) : (
+              <div className="flex justify-center items-center w-full h-full">
+                <Button
+                  disabled={isDisabled}
+                  className="w-4/6  bg-blue-800 text-lightBg hover:bg-blue-900 hover:text-lightBg"
+                >
+                  Take Snacks
+                </Button>
+              </div>
+            )}
           </div>
         </div>
         <div className="control-machine w-2/5 bg-primaryVm dark:bg-primaryVmDark relative">
@@ -93,20 +126,22 @@ function ContainerMachine() {
             </div>
             <div className="lcd-machine bg-lightBg dark:bg-darkBg dark:text-lightBg text-darkBg h-10 w-full flex justify-center items-center">
               <Marquee>
-                <p className='mr-5'>Vending Machine App by Ghozi Izzulhaq</p>
+                <p className="mr-5">Vending Machine App by Ghozi Izzulhaq</p>
               </Marquee>
             </div>
           </div>
           <ContainerActionBuy snacks={snacks} handlePurchase={handlePurchase} />
-          <ModalCollectMoney setBalance={setBalance} />
-          <div className="btn-reset p-2 absolute w-full bottom-5">
-            <Button
-              type="button"
-              onClick={() => handleReset()}
-              className="w-full  bg-red-800 text-lightBg hover:bg-red-900 hover:text-lightBg"
-            >
-              Reset
-            </Button>
+          <ModalConfirmation
+            buttonName={'Collect Money'}
+            action={handleCollectMoney}
+            message={'Are you sure you want to take the money?'}
+          />
+          <div className="btn-reset absolute w-full bottom-5">
+            <ModalConfirmation
+              buttonName={'Reset Machine'}
+              action={handleReset}
+              message={'Are you sure you want to reset vending machine?'}
+            />
           </div>
         </div>
       </div>

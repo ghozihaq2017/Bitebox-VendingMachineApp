@@ -122,7 +122,7 @@ const resetData = async () => {
       });
     }
 
-    alert('Data has been reset to initial state');
+    // alert('Data has been reset to initial state');
   } catch (error) {
     console.error('Error resetting data:', error);
   }

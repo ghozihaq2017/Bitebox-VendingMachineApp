@@ -6,7 +6,7 @@ function CardMoney({mny, onSelect, selectedMoney}) {
     return null
   }
   return (
-    <div onClick={() => onSelect(mny.value)} className={`card-money border-emerald border-2 p-2 cursor-pointer ${selectedMoney === mny.value ? 'border-emerald' : 'border-black'}`}>
+    <div onClick={() => onSelect(mny.value)} className={`card-money  p-2 cursor-pointer ${selectedMoney === mny.value && 'border border-black dark:border-white'}`}>
       <img
         src={mny.imgUrl}
         alt={mny.name}

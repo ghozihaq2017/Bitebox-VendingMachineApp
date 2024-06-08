@@ -5,7 +5,7 @@
       "snackCode": "A1",
       "name": "Biskuit",
       "price": 6000,
-      "stock": 20,
+      "stock": 12,
       "imgUrl": "https://res.cloudinary.com/dshibiync/image/upload/v1717683344/biskuit-removebg-preview_uu6jcl.png",
       "createdAt": "2024-06-06T00:00:00Z",
       "updatedAt": "2024-06-06T00:00:00Z"
@@ -15,7 +15,7 @@
       "snackCode": "A2",
       "name": "Chips",
       "price": 8000,
-      "stock": 15,
+      "stock": 10,
       "imgUrl": "https://res.cloudinary.com/dshibiync/image/upload/v1717683344/chips-removebg-preview_bpe5im.png",
       "createdAt": "2024-06-06T00:00:00Z",
       "updatedAt": "2024-06-06T00:00:00Z"
@@ -25,7 +25,7 @@
       "snackCode": "B1",
       "name": "Oreo",
       "price": 10000,
-      "stock": 15,
+      "stock": 10,
       "imgUrl": "https://res.cloudinary.com/dshibiync/image/upload/v1717683344/oreo-removebg-preview_lpwhb6.png",
       "createdAt": "2024-06-06T00:00:00Z",
       "updatedAt": "2024-06-06T00:00:00Z"
@@ -35,7 +35,7 @@
       "snackCode": "B2",
       "name": "Tango",
       "price": 12000,
-      "stock": 20,
+      "stock": 17,
       "imgUrl": "https://res.cloudinary.com/dshibiync/image/upload/v1717683345/tango-removebg-preview_qjqrw5.png",
       "createdAt": "2024-06-06T00:00:00Z",
       "updatedAt": "2024-06-06T00:00:00Z"
@@ -45,7 +45,7 @@
       "snackCode": "C1",
       "name": "Cokelat",
       "price": 15000,
-      "stock": 15,
+      "stock": 13,
       "imgUrl": "https://res.cloudinary.com/dshibiync/image/upload/v1717683345/coklat-removebg-preview_juiket.png",
       "createdAt": "2024-06-06T00:00:00Z",
       "updatedAt": "2024-06-06T00:00:00Z"

@@ -1,5 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
-import React, { useState } from 'react';
+import React from 'react';
 
 import { Button } from '@/components/ui/button';
 import {
@@ -17,54 +17,33 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import CardMoney from './CardMoney';
 
-function ModalInsertMoney({ money, onInsertMoney }) {
-  const [selectedMoney, setSelectedMoney] = useState(0);
-
-  const handleSelectMoney = (value) => {
-    setSelectedMoney(value);
-  };
-
-  const handleInsertMoney = () => {
-    onInsertMoney(selectedMoney);
-    setSelectedMoney(0);
-  };
-
-  if (!money) {
-    return null;
-  }
+function ModalConfirmation({ message, action, buttonName }) {
+  console.log(buttonName);
   return (
     <Dialog>
       <DialogTrigger asChild className="p-2">
         <div>
           <Button
             variant="outline"
-            className="w-full bg-blue-800 text-lightBg hover:bg-blue-900 hover:text-lightBg rounded-md"
+            className={`w-full  ${buttonName === 'Reset Machine' ? ' bg-red-800 text-lightBg hover:bg-red-900 hover:text-lightBg' : ' bg-blue-800 text-lightBg hover:bg-blue-900 hover:text-lightBg'}`}
           >
-            Insert Money
+            {buttonName}
           </Button>
         </div>
       </DialogTrigger>
       <DialogContent className="bg-primaryVm dark:bg-primaryVmDark  w-11/12 md:w-full">
-        <DialogHeader>
-          <DialogTitle>Insert Money</DialogTitle>
-          <DialogDescription>Select the money you want to insert into the vending machine</DialogDescription>
-        </DialogHeader>
-        <div className="grid grid-cols-2 gap-4 py-4">
-          {money.map((mny) => (
-            <CardMoney
-              key={mny.id}
-              mny={mny}
-              onSelect={handleSelectMoney}
-              selectedMoney={selectedMoney}
-            />
-          ))}
+        {/* <DialogHeader className="min-h-40">
+          <DialogDescription>{message}</DialogDescription>
+        </DialogHeader> */}
+        <div className="message-modal w-full min-h-40  flex justify-center items-center">
+          <h3 className="text-xl">{message}</h3>
         </div>
         <DialogFooter className="sm:justify-evenly justify-evenly">
           <DialogClose
             asChild
             className="bg-blue-800 hover:bg-blue-950 dark:bg-lightBg dark:hover:bg-primaryVm  w-1/3 "
           >
-            <Button  type="button" onClick={() => handleInsertMoney()}>Insert</Button>
+            <Button onClick={action}>Yes</Button>
           </DialogClose>
           <DialogClose
             asChild
@@ -78,4 +57,4 @@ function ModalInsertMoney({ money, onInsertMoney }) {
   );
 }
 
-export default ModalInsertMoney;
+export default ModalConfirmation;

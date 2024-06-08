@@ -1,6 +1,7 @@
 import { Poppins } from 'next/font/google';
 import './globals.css';
 import { ThemeProvider } from '@/components/parts/ThemeProvider';
+import ToasterProvider from '@/providers/ToastProvider';
 
 const poppins = Poppins({
   subsets: ['latin'],
@@ -18,6 +19,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={`${poppins.variable}`}>
+        <ToasterProvider />
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
