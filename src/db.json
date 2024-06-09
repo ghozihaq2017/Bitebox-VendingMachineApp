@@ -5,7 +5,7 @@
       "snackCode": "A1",
       "name": "Biskuit",
       "price": 6000,
-      "stock": 20,
+      "stock": 0,
       "imgUrl": "https://res.cloudinary.com/dshibiync/image/upload/v1717683344/biskuit-removebg-preview_uu6jcl.png",
       "createdAt": "2024-06-06T00:00:00Z",
       "updatedAt": "2024-06-06T00:00:00Z"
